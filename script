@@ -1,0 +1,63 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Space Pet Sim X", "DarkTheme")
+local Farm = Window:NewTab("Farm")
+local FarmSection = Farm:NewSection("Farm")
+FarmSection:NewToggle("Auto Farm", "Auto Farms", function(state)
+    if state then
+        _G.autoFarm = true;
+while _G.autoFarm == true do
+wait()
+getgenv().speed=200
+		for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do v:Disable() end
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/inceldom/scrip/main/petsimsex",true))()
+end
+    else
+        _G.autoFarm = false;
+        while _G.autoFarm == true do
+        wait()
+        getgenv().speed=200
+                for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do v:Disable() end
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/inceldom/scrip/main/petsimsex",true))()
+        end  
+    end
+end)
+FarmSection:NewToggle("open Dark Tech Egg ", "Dark Tech Egg", function(state)
+    if state then
+        _G.autoFarm = true;
+while _G.autoFarm == true do
+wait()
+workspace.__THINGS.__REMOTES["buy egg"]:InvokeServer({"Dark Tech Egg",false})
+end
+    else
+        _G.autoFarm = false;
+        while _G.autoFarm == true do
+        wait()
+        workspace.__THINGS.__REMOTES["buy egg"]:InvokeServer({"Dark Tech Egg",false})
+        end
+    end
+end)
+FarmSection:NewToggle("Open Golden Dark Tech Egg", "Dark Tech Egg", function(state)
+    if state then
+        _G.autoFarm = true;
+while _G.autoFarm == true do
+wait()
+workspace.__THINGS.__REMOTES["buy egg"]:InvokeServer({"Golden Dark Tech Egg",false})
+end
+    else
+        _G.autoFarm = false;
+while _G.autoFarm == true do
+wait()
+workspace.__THINGS.__REMOTES["buy egg"]:InvokeServer({"Golden Dark Tech Egg",false})
+end
+    end
+end)
+local Teleports = Window:NewTab("Teleports")
+local TeleportsSection = Teleports:NewSection("Teleports")
+TeleportsSection:NewButton("tp to tech world", "tp", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(263.103271, 94.0400085, 3163.07495, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+end)
+local Player = Window:NewTab("Player")
+local PlayersSection = Player:NewSection("Player")
+PlayersSection:NewSlider("Walkspeed", "Speed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
